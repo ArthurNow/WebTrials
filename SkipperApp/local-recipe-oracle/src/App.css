@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  height: 100%;
+  background: black;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+#canvas1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0; /* canvas is background */
+}
+
+.app {
+  position: relative;
+  z-index: 1; /* everything else is above */
+}
+
+@keyframes animatePath {
+  0% {
+    stroke-dashoffset: 1000;
+    stroke: orange;
+  }
+  50% {
+    stroke-dashoffset: -1000;
+    stroke: pink;
+  }
+  100% {
+    stroke-dashoffset: 1000;
+    stroke: lime;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  top: 15%;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input,
+.search-box select,
+.search-box button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+
+.search-box input {
+  width: 250px;
+}
+
+.search-box button {
+  background: lime;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.testmode-toggle {
+  margin-top: 10px;
+  display: block;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: pre-wrap;
+}
+
+body {
+  background: black;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* #snail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  display: block;
+  height: auto;
+  z-index: 2; 
+  opacity: 0.6; 
+}
+
+#snail path {
+  fill: none;
+  stroke: url(#gradient);
+  stroke-miterlimit: 10;
+  stroke-width: 2;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 0;
+  animation: animatePath 10s ease-in-out infinite;
+} */
+
+#tiki {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  display: block;
+  height: auto;
+  z-index: 2;
+  opacity: 0.6; /* make it subtle */
+}
+
+#tiki path {
+  fill: none;
+  stroke: url(#gradient);
+  stroke-miterlimit: 10;
+  stroke-width: 2;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 0;
+  animation: animatePath 10s ease-in-out infinite;
+}
+
+@keyframes animatePath {
+  0% {
+    stroke-dashoffset: 700;
+  }
+  50% {
+    stroke-dashoffset: -700;
+  }
+  100% {
+    stroke-dashoffset: 700;
+  }
+}
